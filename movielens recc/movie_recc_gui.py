@@ -20,8 +20,8 @@ movie = pd.merge(df, df1, on = 'movie_id')
 
 result = ttk.Variable(app)
 box = ttk.Listbox(app, height=10)
-for rows, val in movie.iterrows():
-    box.insert(rows+1, val('title'))
+for title in movie['title'].unique():
+    box.insert(ttk.END, title)
 
 box.place(x=10, y=10)
 
